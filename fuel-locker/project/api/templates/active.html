@@ -1,0 +1,48 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Current Lock</h4>
+        {% if session["active"] %}
+        <table class="table table-bordered table-sm">
+            <tr>
+                <td>Id</td>
+                <td>{{ session["active"]["Id"] }}</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>{{ session["active"]["Status"] }}</td>
+            </tr>
+            <tr>
+                <td>FuelGradeModel</td>
+                <td>{{ session["active"]["FuelGradeModel"] }}</td>
+            </tr>
+            <tr>
+                <td>CentsPerLitre</td>
+                <td>{{ session["active"]["CentsPerLitre"] }}</td>
+            </tr>
+            <tr>
+                <td>TotalLitres</td>
+                <td>{{ session["active"]["TotalLitres"] }}</td>
+            </tr>
+            <tr>
+                <td>RedeemedAt</td>
+                <td>
+                    {{ session["active"]["RedeemedAt"] }}
+                </td>
+            </tr>
+            <tr>
+                <td>ExpiresAt</td>
+                <td>
+                    {{ session["active"]["ExpiresAt"] }}
+                </td>
+            </tr>
+            <tr>
+                <td>CreatedAt</td>
+                <td>
+                    {{ session["active"]["CreatedAt"] }}
+                </td>
+            </tr>
+        </table>
+
+        {% endif %}
+    </div>
+</div>

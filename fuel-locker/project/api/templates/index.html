@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+<!--  -->
+{% block title %}7-Eleven Fuel Locker{% endblock %}
+<!--  -->
+{% block body %}
+<!--  -->
+{% if session["accountId"] %}
+<div class="container">
+  <div class="row">
+    <div class="col-5">
+      <h4>Welcome {{ session["firstName"] }}!</h4>
+    </div>
+    <div class="col-5">
+      <h4>Current balance: ${{ session["cardBalance"] }}</h4>
+    </div>
+    <div class="col-2" style="text-align:right;">
+      <form action="/logout">
+        <button class="btn btn-primary" type="submit">Logout</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    {% if session["ErrorMessage"] %}
+    <p>{{ session["ErrorMessage"] }}</p>
+    {% endif %}
+    {% if session["SuccessMessage"] %}
+    <p>{{ session["SuccessMessage"] }}</p>
+    {% endif %}
+    <div class="col">
+      {% if session["active"] %}
+      {% include "active.html" %}
+      {% else %}
+      {% include "lock.html" %}
+      {% endif %}
+    </div>
+    <div class="col">
+      {% include "history.html" %}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      {% include "prices.html" %}
+    </div>
+  </div>
+</div>
+{% else %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      {% include "login.html" %}
+    </div>
+  </div>
+</div>
+{% endif %}
+<!--  -->
+{% endblock %}

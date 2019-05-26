@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Best Prices</h4>
+    <table class="table table-bordered table-sm">
+      <thead class="thead-light">
+        <tr>
+          <th>Fuel</th>
+          <th class="text-right">Price</th>
+          <th class="text-right">Postcode</th>
+          <th>State</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      {% for i in range(6) %}
+      <tr>
+        <td>{{ session["prices"][i]["type"] }}</td>
+        <td class="text-right">{{ session["prices"][i]["price"] }}</td>
+        <td class="text-right">{{ session["prices"][i]["postcode"] }}</td>
+        <td>{{ session["prices"][i]["state"] }}</td>
+        <td>{{ session["prices"][i]["name"] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>

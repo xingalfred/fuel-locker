@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Fuel Price Lock</h4>
+    <form action="/lock" method="POST">
+      <div class="form-group">
+        <label for="fuelType">Select your fuel type</label>
+        <select class="form-control" name="fuelType">
+          {% for i in range(6) %}
+          <option>{{ session["prices"][i]["type"] }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Lock in</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Fuel Price Lock History</h4>
+    {% if session["history"] %}
+    <table class="table table-bordered table-sm">
+      <tr>
+        <td>Id</td>
+        <td>{{ session["history"]["Id"] }}</td>
+      </tr>
+      <tr>
+        <td>Status</td>
+        <td>{{ session["history"]["Status"] }}</td>
+      </tr>
+      <tr>
+        <td>FuelGradeModel</td>
+        <td>{{ session["history"]["FuelGradeModel"] }}</td>
+      </tr>
+      <tr>
+        <td>CentsPerLitre</td>
+        <td>{{ session["history"]["CentsPerLitre"] }}</td>
+      </tr>
+      <tr>
+        <td>TotalLitres</td>
+        <td>{{ session["history"]["TotalLitres"] }}</td>
+      </tr>
+      <tr>
+        <td>RedeemedAt</td>
+        <td>
+          {{ session["history"]["RedeemedAt"] }}
+        </td>
+      </tr>
+      <tr>
+        <td>ExpiresAt</td>
+        <td>
+          {{ session["history"]["ExpiresAt"] }}
+        </td>
+      </tr>
+      <tr>
+        <td>CreatedAt</td>
+        <td>
+          {{ session["history"]["CreatedAt"] }}
+        </td>
+      </tr>
+    </table>
+
+    {% endif %}
+  </div>
+</div>

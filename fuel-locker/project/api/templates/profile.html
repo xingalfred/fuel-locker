@@ -1,0 +1,11 @@
+<div class="col-5">
+  <h4>Welcome {{ session["firstName"] }}!</h4>
+</div>
+<div class="col-5">
+  <h4>Current balance: ${{ session["cardBalance"] }}</h4>
+</div>
+<div class="col-2" style="text-align:right;">
+  <form action="/logout">
+    <button class="btn btn-primary" type="submit">Logout</button>
+  </form>
+</div>
